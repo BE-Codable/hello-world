@@ -1,0 +1,423 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  min-height: 100vh;
+  min-width: 320px;
+  background: var(--bg);
+  overflow-x: hidden;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+:root {
+  --bg: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111111;
+  }
+}
+
+#topo-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+#app {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem 3rem;
+}
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 1.5rem;
+  align-self: flex-end;
+  padding-right: 1rem;
+  background: #edf5f5;
+  border-radius: 999px;
+  padding: 0.25rem 0.35rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #888;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  letter-spacing: 0.05em;
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lang-btn--active {
+  background: #fff;
+  color: #3281a8;
+  font-weight: 600;
+}
+
+.lang-sep {
+  display: none;
+}
+
+.name {
+  font-family: 'Bungee', 'Arial Black', sans-serif;
+  font-size: 6rem;
+  margin-top: 3rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  position: relative;
+}
+
+.name span {
+  background: linear-gradient(to right, #5aa5a1, #3281a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.surname {
+  font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 2.4rem;
+  margin-top: -1.2rem;
+  color: #555;
+  text-align: center;
+}
+
+.birthday {
+  font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #1a1a1a;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .name { font-size: 4.5rem; }
+  .surname { font-size: 1.8rem; margin-top: -1rem; }
+  .birthday { font-size: 0.85rem; }
+}
+
+@media (max-width: 480px) {
+  .name { font-size: 3.2rem; }
+  .surname { font-size: 1.3rem; margin-top: -0.7rem; }
+  .birthday { font-size: 0.72rem; }
+}
+
+
+@media (prefers-color-scheme: dark) {
+  .surname, .birthday {
+    color: #e0e0e0;
+  }
+
+  .card-logo-icon {
+    color: #e0e0e0;
+  }
+
+  .card-logo {
+    filter: invert(1) grayscale(1);
+  }
+}
+
+.sections {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 2rem;
+}
+
+.card-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.card-logo-wrap {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.card-logo-icon {
+  width: 80px;
+  height: 80px;
+  padding: 20px;
+  border-radius: 50%;
+  background: #edf5f5;
+  color: #555;
+}
+
+.card {
+  flex: 6;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(90, 165, 161, 0.15);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.card--narrow {
+  flex: 4;
+  background: linear-gradient(135deg, #5aa5a1, #3281a8);
+  border-color: transparent;
+}
+
+.card--narrow .card-title {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card--narrow .card-text {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.card--narrow .card-link {
+  background: #fff;
+  color: #3281a8;
+  border: none;
+  font-weight: 600;
+  margin-top: 0.6rem;
+}
+
+
+.card-title {
+  font-family: 'Bungee', 'Arial Black', sans-serif;
+  font-size: 1.3rem;
+  background: linear-gradient(to right, #5aa5a1, #3281a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.05em;
+}
+
+.card-text {
+  font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.iban-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iban-row {
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  color: #3281a8;
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 0.45rem;
+}
+
+.copy-btn:hover {
+  background: rgba(50, 129, 168, 0.1);
+}
+
+.copy-btn.copied {
+  color: #5aa5a1;
+}
+
+.copy-feedback {
+  font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.95rem;
+  color: #5aa5a1;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+.copy-feedback.visible {
+  opacity: 1;
+}
+
+.card-iban.copied .iban-text {
+  opacity: 0;
+}
+
+.card-iban {
+  font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  letter-spacing: 0.1em;
+  padding: 0.6rem 1rem;
+  background: rgba(90, 165, 161, 0.08);
+  border-radius: 8px;
+  word-break: break-all;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iban-text {
+  transition: opacity 0.2s;
+}
+
+.card-detail {
+  font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.card-inline-link {
+  color: #5aa5a1;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.card-link {
+  font-family: 'Nunito', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.9rem;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(to right, #5aa5a1, #3281a8);
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  display: inline-block;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.card-link:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .card:not(.card--narrow) {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+
+  .card-iban {
+    color: #e0e0e0;
+    background: rgba(90, 165, 161, 0.12);
+  }
+
+  .card-text {
+    color: #aaa;
+  }
+
+  .card-detail {
+    color: #aaa;
+  }
+}
+
+@media (max-width: 750px) {
+  .sections {
+    flex-direction: column;
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sections {
+    padding: 0;
+  }
+
+  .card {
+    padding: 1.5rem 1.2rem;
+  }
+}
+
+.name::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  color: var(--bg);
+  text-shadow:
+    0 0 0 var(--bg),
+    0 0 0 var(--bg),
+    0 0 0 var(--bg),
+    0 0 0 var(--bg),
+    0 0 2px var(--bg),
+    0 0 2px var(--bg),
+    0 0 2px var(--bg),
+    0 0 2px var(--bg),
+    0 0 4px var(--bg),
+    0 0 4px var(--bg),
+    0 0 4px var(--bg),
+    0 0 4px var(--bg),
+    0 0 6px var(--bg),
+    0 0 6px var(--bg),
+    0 0 6px var(--bg),
+    0 0 6px var(--bg),
+    0 0 8px var(--bg),
+    0 0 8px var(--bg),
+    0 0 10px var(--bg),
+    0 0 10px var(--bg);
+}
