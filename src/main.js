@@ -16,7 +16,7 @@ const translations = {
     ibanName: 'op naam van Andries-Seynhaeve',
     copied: 'Gekopieerd!',
     copyAria: 'Kopieer IBAN',
-    ogDescription: 'Estée Seynhaeve — geboren op 18 september 2026. Bekijk haar geboortelijst bij Mic Mac Minuscule of doe een bijdrage.',
+    ogDescription: 'Estée Seynhaeve — geboren op 25 september 2026. Bekijk haar geboortelijst bij Mic Mac Minuscule of doe een bijdrage.',
   },
   fr: {
     listUrl: 'https://gift.micmacminuscule.be/fr/54JGEGP',
@@ -29,7 +29,7 @@ const translations = {
     ibanName: 'au nom de Andries-Seynhaeve',
     copied: 'Copié !',
     copyAria: 'Copier l\'IBAN',
-    ogDescription: 'Estée Seynhaeve — née le 18 septembre 2026. Découvrez sa liste de naissance chez Mic Mac Minuscule ou faites une contribution.',
+    ogDescription: 'Estée Seynhaeve — née le 25 septembre 2026. Découvrez sa liste de naissance chez Mic Mac Minuscule ou faites une contribution.',
   },
 }
 
